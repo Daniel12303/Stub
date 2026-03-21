@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+     --background-color: #f7f7f7;
+     --dark-green: #183b07;
+     --light-green: #314c23;
+}
+
+body,
+html {
+     width: 100%;
+     height: 100%;
+     margin: 0;
+     padding: 0;
+     
+     overflow: hidden;
+}
+
+body {
+     background-color: var(--background-color);
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+     align-items: center;
+
+     padding-top: 4%;
+}
+
+h1 {
+     font-family: 'Plus Jakarta Sans';
+     font-size: 3.5rem;
+     font-weight: 800;
+
+     color: var(--dark-green);
+
+     margin-bottom: 3%;
+}
+
+#foodBar {
+     background-color: var(--light-green);
+
+     width: 75%;
+     height: 16%;
+
+     border-radius: 15px;
+     margin-bottom: 3%;
+}
+
+#lowerSection {
+     width: 75%;
+     flex-grow: 1;
+
+     display: flex;
+     justify-content: space-between;
+}
+
+#pointBox {
+     width: 33%;
+     height: 70%;
+
+     border-radius: 16px;
+
+     background-color: var(--light-green);
+}
+
+#barBox {
+     width: 62%;
+     height: 70%;
+
+     border-radius: 16px;
+
+     background-color: var(--dark-green);
+}
