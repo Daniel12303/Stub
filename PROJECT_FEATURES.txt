@@ -1,0 +1,102 @@
+LOGIN PAGE
+    Two Types of Accounts
+    1. Student Account
+        - Only available to scholars
+    - Accounts are created by the admins, with no users being able to create their own account
+
+    2. Admin Account
+        - Only registered personell have admin permissions
+
+USER PAGE
+    1. DASHBOARD
+        - Profile Menu
+            - Logout
+
+        - Meal
+            - Current Meal is highlighted
+            - While the other meals in the day are smaller
+        - Current Available Point for Meal
+        - PASA-POINT Button
+
+        - User Barcode
+
+        - Week Meal Schedule
+
+
+    2. USER ANALYTICS
+        - Displays Student Information
+            - Student Name
+            - Grade Level & Section
+            - Scholar / Non-Scholar
+            - Student Food Code / Barcode
+
+        - Search bar for selecting specific day / month / quarter / year
+            - Depending on the inputted information
+        - Used over Total Food Stubs
+            - Missed Breakfasts
+            - Missed AM Snacks
+            - Missed Lunches
+            - Missed PM Snacks
+            - Missed Dinners
+
+    3. PASA-POINT (Pop-UP)
+        - Input field for student code / name
+        - Amount of points to pass
+        - Confirm button
+
+ADMIN PAGE
+    1. DAY DATA
+        - Search bar for selecting specific student (via number or name)
+        - Highlighted Day Breakdown of Number of Students that Had the current meal
+            - Broken down into grade levels
+            - Current Meal
+        - Smaller Day Breakdown of Number of Students that Had the day meals
+            - Meal List
+
+        - Button to view monthly / quarterly / yearly food stub data
+
+    2. MONTHLY / QUARTERLY / YEARLY DATA
+        - Search bar for selecting specific day / month / quarter / year and/or student
+            - Depending on the inputted information
+
+        - Month / Quarter / Year Selector
+        - Used over Total Food Stubs
+            - Missed Breakfasts
+            - Missed AM Snacks
+            - Missed Lunches
+            - Missed PM Snacks
+            - Missed Dinners
+
+    3. GRADE LEVEL DATA
+        - Data for the number of students that had the meal for the specific grade level, similar to they layout of the dashboard
+            - Highlighted Day Breakdown of Number of Students that Had the current meal
+                - Broken down into sections
+                - Current Meal
+            - Smaller Day Breakdown of Number of Students that Had the day meals
+                - Meal List
+
+    3. STUDENT SPECIFIC DATA (DAY BREAKDOWN)
+        - Search bar for selecting specific day / month / quarter / year
+            - Depending on the inputted information
+        - Displays Student Information
+            - Student Name
+            - Grade Level & Section
+            - Student Food Code / Barcode
+            - Scholar or Non/Scholar !!!
+
+        - Displays Missed or Consumed Meals on the Day
+
+    4. STUDENT SPECIFIC DATA (MONTH / QUARTER / YEAR BREAKDOWN)
+        - Displays Student Information
+            - Student Name
+            - Grade Level & Section
+            - Student Food Code / Barcode
+
+        - Search bar for selecting specific day / month / quarter / year
+            - Depending on the inputted information
+        - Used over Total Food Stubs
+            - Missed Breakfasts
+            - Missed AM Snacks
+            - Missed Lunches
+            - Missed PM Snacks
+            - Missed Dinners

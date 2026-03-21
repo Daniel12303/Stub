@@ -13,8 +13,9 @@ const app = express()
 //routes middleware
 app.use('/api/auth', auth)
 
-
+//middleware
 app.use(cookieParser())
+app.use(express.static('./static'))
 
 const __dirname = import.meta.dirname;
 dotenv.config({ path: path.join(__dirname, '../.env') })
@@ -36,11 +37,11 @@ app.get('/', async (req, res) => {
   }
 
   else
-    res.redirect('/authPage')
+    res.sendFile(path.resolve(__dirname, './static/index.html'))
 })
 
 app.get('/authPage', (req, res) => {
-  res.send('SignupHere')
+  res.sendFile(path.resolve(__dirname, './static/authPage.html'))
 })
 
 app.listen(5000, console.log('Listening at Port 5000'))
