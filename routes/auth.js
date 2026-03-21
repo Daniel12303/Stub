@@ -46,6 +46,7 @@ router.post('/signin', async (req, res) => {
     return res.redirect('/authPage')
   }
 
+  console.log(data)
   res.cookie("access_token", data.session.access_token, { httpOnly: true })
   res.redirect('/api/auth/token')
 })

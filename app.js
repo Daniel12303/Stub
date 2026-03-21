@@ -7,17 +7,20 @@ import { createClient } from '@supabase/supabase-js'
 
 //routes imports
 import { auth } from './routes/auth.js'
+import { authPage } from './routes/authPage.js'
 
 const app = express()
+const __dirname = import.meta.dirname;
 
 //routes middleware
 app.use('/api/auth', auth)
+app.use('/authPage', authPage)
+
 
 //middleware
 app.use(cookieParser())
-app.use(express.static('./static'))
+app.use('/', express.static(path.resolve(__dirname, './static')))
 
-const __dirname = import.meta.dirname;
 dotenv.config({ path: path.join(__dirname, '../.env') })
 
 const supabase = createClient(process.env.PROJECT_URL, process.env.PROJECT_PUBKEY)
@@ -33,15 +36,12 @@ app.get('/', async (req, res) => {
       res.redirect('/authPage')
     }
 
-    res.send(data.user.email)
+    res.sendFile(path.resolve(__dirname, './static/home.html'))
   }
 
-  else
-    res.sendFile(path.resolve(__dirname, './static/index.html'))
-})
-
-app.get('/authPage', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './static/authPage.html'))
+  else {
+    res.redirect('/authPage')
+  }
 })
 
 app.listen(5000, console.log('Listening at Port 5000'))
