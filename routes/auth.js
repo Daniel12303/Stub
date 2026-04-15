@@ -39,14 +39,13 @@ router.post('/signup', async (req, res) => {
 
 router.post('/signin', async (req, res) => {
   const { email, password } = req.body
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+  let { data, error } = await supabase.auth.signInWithPassword({ email, password })
 
   if (error) {
     console.log(error.message)
     return res.redirect('/authPage')
   }
-
-  console.log(data)
+  
   res.cookie("access_token", data.session.access_token, { httpOnly: true })
   res.redirect('/api/auth/token')
 })

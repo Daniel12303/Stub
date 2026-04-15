@@ -2,19 +2,47 @@
 <html lang="en">
      <head>
           <meta charset="UTF-8" />
-          <meta
-               name="viewport"
-               content="width=device-width, initial-scale=1.0"
-          />
+          <meta content="width=device-width, initial-scale=1.0" />
           <title>Home Page</title>
           <link rel="stylesheet" href="styles/styles.css" />
      </head>
      <body>
           <h1 id="headerName">Hello Daniel!</h1>
-          <div id="foodBar"></div>
+          <div id="foodBar">
+               <div class="mealContainers" id="breakfastContainer">
+                    <p class="mealName" id="breakfastName">Arroz Cal Do</p>
+                    <p class="mealText" id="breakfastText">Breakfast</p>
+               </div>
+               <div class="mealContainers" id="amsnackContainer">
+                    <p class="mealName" id="amsnackName">Pizza Pie</p>
+                    <p class="mealText" id="amsnackText">AM Snack</p>
+               </div>
+               <div class="mealContainers" id="lunchContainer">
+                    <p class="mealName" id="lunchName">Adobong Baboy</p>
+                    <p class="mealText" id="lunchText">Lunch</p>
+               </div>
+               <div class="mealContainers" id="pmsnackContainer">
+                    <p class="mealName" id="pmsnackName">Banana Cue</p>
+                    <p class="mealText" id="pmsnackText">PM Snack</p>
+               </div>
+               <div class="mealContainers" id="dinnerContainer">
+                    <p class="mealName" id="dinnerName">Cordon Bleu</p>
+                    <p class="mealText" id="dinnerText">Dinner</p>
+               </div>
+          </div>
           <div id="lowerSection">
-               <div id="pointBox"></div>
-               <div id="barBox"></div>
+               <div id="profileBox"></div>
+               <div id="barBox">
+                    <img id="qrImage" alt="qrCode" />
+                    <div id="qrTextContainer">
+                         <p id="qrText">
+                              Scan the QR Code in the scanner in the school
+                              cafeteria, or input the code.
+                         </p>
+                    </div>
+               </div>
           </div>
      </body>
+
+     <script src="index.js"></script>
 </html>

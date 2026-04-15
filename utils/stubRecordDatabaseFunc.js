@@ -1,6 +1,14 @@
-// import sql from "./databaseInit.js";
-
 import { supabase } from "./databaseInit.js";
+import { setStudentScoreDefault, createRandomKey } from "./studentRecordDatabaseFunc.js"
+
+function getDate() {
+  let currentDate = new Date()
+  let dateString = currentDate.toISOString()
+
+  dateString = dateString.slice(0, dateString.indexOf('T'))
+
+  return dateString
+}
 
 export async function getAllData() {
   const { data, error } = await supabase
@@ -96,6 +104,7 @@ async function incrementAm_SnackByDate(meal, date) {
     .update({ am_snack: stubCount })
     .eq('date', date)
 
+    .insert({ student_code: student_code })
   if (error)
     console.log(error)
 }
@@ -136,3 +145,29 @@ async function incrementDinnerByDate(meal, date) {
     console.log(error)
 }
 
+async function insertDayRecord(breakfast, am_snack, lunch, pm_snack, dinner) {
+  const { error } = await supabase
+    .from('stubRecord')
+    .insert({ breakfastMeal: breakfast, am_snackMeal: am_snack, lunchMeal: lunch, pm_snackMeal: pm_snack, dinnerMeal: dinner })
+
+  if (error)
+    console.log(error)
+
+  await setStudentScoreDefault()
+  await createRandomKey()
+}
+
+export async function getDayFood() {
+  const date = getDate()
+
+  const { data, error } = await supabase
+    .from('stubRecord')
+    .select('breakfastMeal, am_snackMeal, lunchMeal, pm_snackMeal, dinnerMeal')
+    .eq('date', date)
+
+  if (error)
+    console.log(error.message)
+
+  else
+    return data[0]
+}

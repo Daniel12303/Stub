@@ -1,11 +1,18 @@
 import { supabase } from "./databaseInit.js";
 
-async function getAll() {
-  const result = await sql`select * from "userAccounts";`
-  console.log(result)
+export async function getAllCode() {
+  const { data, error } = await supabase
+    .from('userAccounts')
+    .select('student_code')
+
+  if (error)
+    console.log(error.message)
+
+  else
+    return data
 }
 
-async function insertAccounts(userEmail, userStudent_code, userStudent_name, userGrade_level, userSection) {
+export async function insertAccounts(userEmail, userStudent_code, userStudent_name, userGrade_level, userSection) {
   const { error } = await supabase
     .from('userAccounts')
     .insert({
@@ -17,4 +24,16 @@ async function insertAccounts(userEmail, userStudent_code, userStudent_name, use
     })
 }
 
-export { insertAccounts }
+export async function getStudentCodeFromEmail(email) {
+  const { data, error } = await supabase
+    .from('userAccounts')
+    .select('student_code')
+    .eq('email', email)
+
+  if (error)
+    console.log(error.message)
+
+  else
+    return data[0]['student_code']
+}
+

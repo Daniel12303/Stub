@@ -13,6 +13,6 @@ dotenv.config({ path: path.join(__dirname, '../.env') })
 
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(process.env.PROJECT_URL, process.env.PROJECT_PUBKEY)
+const supabase = createClient(process.env.PROJECT_URL, process.env.PROJECT_SECRETKEY)
 
 export { supabase }
